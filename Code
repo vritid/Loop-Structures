@@ -1,0 +1,44 @@
+public static void main(String[] args) {
+		Scanner input = new Scanner (System.in);
+		// TODO Auto-generated method stub
+		    //input: set up an array to hold all values of count
+		    System.out.println("Please enter the number of players");
+		    int count = input.nextInt();
+		    int[] points;
+		    int[] fouls;
+		    int[] playerscore;
+
+		    points = new int[count];
+		    fouls = new int[count];
+		    playerscore = new int[count];
+		    int goldstarplayer = 0;
+
+		    //process;
+		    for (int c=0; c  < count; c++)
+		    {
+		      System.out.println("Enter the points scored by player #" + c);
+		      int s = input.nextInt();
+		      points[c]= s;
+		      System.out.println("Enter the fouls by the player #" +c);
+		      int f = input.nextInt();
+		      fouls[c]=f;
+		     
+		      int p = (5*s) - (3*f);
+		      playerscore[c] = p;
+
+		      // if player score is greater than 40 increase gold star player by 1
+		      if ( playerscore[c] > 40){
+		        goldstarplayer++;
+		       
+		      }
+
+		     
+		    }//end for loop
+		   
+		    // if gold star player count is same as number of players inputted (variable count) it is a gold team and add a +
+		    if (goldstarplayer==count){
+		      System.out.println(goldstarplayer + "+");
+		    }
+		   
+	}
+}
